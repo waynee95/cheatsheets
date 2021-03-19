@@ -2,7 +2,7 @@
 
 ## Run temporary fhsChrootEnv
 
-Runs FHS-compatible lightweight sandbox. 
+Runs FHS-compatible lightweight sandbox.
 
 See https://nixos.org/nixpkgs/manual/#sec-fhs-environments
 
