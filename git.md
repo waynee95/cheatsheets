@@ -59,3 +59,8 @@ $ git clean -n -d <path>
 # Actually remove the files!
 $ git clean -f <path>
 ```
+## List number of LOC changed 
+
+```bash
+$ git diff --shortstat
+```
