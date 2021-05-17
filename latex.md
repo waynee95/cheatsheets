@@ -94,3 +94,13 @@ Use `[I.]` for capitalized roman letters.
 
 \sum_{\substack{i \in S \\ i \in T}} i
 ```
+
+## Enclose align with {}
+
+```tex
+\left\{
+  \begin{align}
+    1 \\ 2 \\ 3
+  \end{align}
+\right\}
+```
