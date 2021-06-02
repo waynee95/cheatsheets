@@ -104,3 +104,48 @@ Use `[I.]` for capitalized roman letters.
   \end{align}
 \right\}
 ```
+
+## Tikz Automata as single SVG
+
+```tex
+\documentclass[crop,border=1pt]{standalone}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata,positioning,decorations,shadows}
+
+\begin{document}
+  \begin{tikzpicture}[
+      initial text={}
+      , node distance=3cm
+      , on grid
+      , auto
+      , every state/.style = {draw=black,fill=white,thick,drop shadow={fill=black!40}}
+      , every initial by arrow/.style = {font=\large,thick,-stealth}
+    ]
+    \node[state,initial]    (q_0)                      {$q_0$};
+    \node[state]            (q_2) [above right of=q_0] {$q_2$};
+    \node[state]            (q_1) [below right of=q_2] {$q_1$};
+    \node[state]            (q_3) [below right of=q_0] {$q_3$};
+    \node[state,accepting]  (q_4) [right of=q_3]       {$q_{acc}$};
+
+    \path[->,thick] (q_0) edge              node        {$Y \mid Y, R$} (q_3);
+    \path[->,thick] (q_3) edge [loop below] node        {$Y \mid Y, R$} (q_3);
+    \path[->,thick] (q_3) edge              node        {$\square \mid \square, R$} (q_4);
+    \path[->,thick] (q_0) edge              node        {$0 \mid X, R$} (q_1);
+    \path[->,thick] (q_1) edge [loop right] node        {$\begin{matrix}Y \mid Y, R \\ 0 \mid 0, R\end{matrix}$} (q_1);
+    \path[->,thick] (q_1) edge              node[right] {$1 \mid Y, L$} (q_2);
+    \path[->,thick] (q_2) edge [loop above] node        {$\begin{matrix}Y \mid Y, L \\ 0 \mid 0, L\end{matrix}$} (q_2);
+    \path[->,thick] (q_2) edge              node[left]  {$X \mid X, R$} (q_0);
+  \end{tikzpicture}
+\end{document}
+```
+
+```bash
+$ pdflatex TM.tex
+$ pdf2svg TM.tex TM.svg
+```
+
+Result:
+
+![](img/TM.svg)
