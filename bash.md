@@ -250,3 +250,10 @@ $ mkdir ~/.fonts/<font-family-name>
 $ mv *.ttf ~/.fonts/<font-family-name>
 $ fc-cache -f -v
 ```
+
+## Remove last page from PDF using command line
+
+```
+sudo apt install pdftk
+pdftk input.pdf cat 1-2 output out.pdf
+```
