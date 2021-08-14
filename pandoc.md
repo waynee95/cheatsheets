@@ -8,7 +8,6 @@ title: "Hello World"
 header-includes:
   - \usepackage{...}
 ---
-
 ```
 
 ## Documentclass options
@@ -22,7 +21,6 @@ classoption:
   - twocolumn
   - landscape
 ---
-
 ```
 
 ## Insert comments ([Reference](https://alvinalexander.com/technology/markdown-comments-syntax-not-in-generated-output/))
