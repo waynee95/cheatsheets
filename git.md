@@ -76,3 +76,9 @@ $ git config --global credential.helper \
 ```
 
 See: https://askubuntu.com/questions/773455/what-is-the-correct-way-to-use-git-with-gnome-keyring-and-https-repos/959662#959662
+
+## Git remove password
+
+```
+$ git config --global --unset user.password
+```
