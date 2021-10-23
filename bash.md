@@ -257,3 +257,9 @@ $ fc-cache -f -v
 sudo apt install pdftk
 pdftk input.pdf cat 1-2 output out.pdf
 ```
+
+## Convert djvu to pdf
+
+```bash
+$ djvups input.djvu | ps2pdf - output.pdf
+```
