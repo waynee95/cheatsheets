@@ -149,3 +149,16 @@ $ pdf2svg TM.tex TM.svg
 Result:
 
 ![](img/TM.svg)
+
+## Position image at specific location in Beamer
+
+```
+\begin{frame}
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[left] at (current page.east) 
+    {
+      \includegraphics[scale=0.5]{mypicture}
+    };
+  \end{tikzpicture}
+\end{frame}
+```
