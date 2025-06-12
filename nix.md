@@ -21,12 +21,8 @@ $ nix-collect-garbage
 ## Install package from unstable while running stable
 
 ```bash
-$ nix-channel --add https://nixos.org/channels/nixos-unstable unstable
-$ nix-channel --update
-$ nix-channel --list
+$ nix-shell -I nixpkgs=channel:nixos-unstable -p isabelle
 ```
-
-And then install via `nix-env -iA unstable.<package_name>`.
 
 ## Search for package
 
