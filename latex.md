@@ -155,7 +155,7 @@ Result:
 ```
 \begin{frame}
   \begin{tikzpicture}[remember picture, overlay]
-    \node[left] at (current page.east) 
+    \node[left] at (current page.east)
     {
       \includegraphics[scale=0.5]{mypicture}
     };
